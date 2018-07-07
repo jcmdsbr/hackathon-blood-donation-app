@@ -9,14 +9,19 @@ var jsDoacaoIndex = {
     acoes: {
         carregar: function () {
             this.change();
-            this.salvar();
+            this.click();
         },
         change: function () {
             $("#drpTipoDoacao").on('change', function () {
                 jsDoacaoIndex.acoes.validarTipoDoacao();
             });
         },
-        salvar: function () {
+        click: function () {
+            $("#btnEmitirAviso").on('click', function () {
+                event.preventDefault();
+                $("#isEmitirAviso").val(true);
+                $("#formDoacao").submit();
+            });
         },
         validarTipoDoacao: function () {
             if ($("#drpTipoDoacao").val() == tipoDoacaoSangue) {
