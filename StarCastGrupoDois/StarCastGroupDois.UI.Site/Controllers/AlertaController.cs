@@ -5,7 +5,7 @@ using StarCastGrupoDois.Domain.Entities.Fixed;
 using StarCastGrupoDois.Domain.Entities.Models;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 namespace StarCastGroupDois.UI.Site.Controllers
 {
     public class AlertaController : Controller
@@ -19,9 +19,9 @@ namespace StarCastGroupDois.UI.Site.Controllers
 
         public IActionResult Index()
         {
-            var alertaVM = (List<Alerta>)_alertaService.BuscarAlertas();
-
-            return View(alertaVM);
+            var alertas = (List<Alerta>)_alertaService.BuscarAlertas();
+            var listAlertasVm = alertas.Select(x => (AlertaViewModel)x);
+            return View(listAlertasVm);
         }
         public IActionResult CancelarAviso(Guid codigoAlerta)
         {
