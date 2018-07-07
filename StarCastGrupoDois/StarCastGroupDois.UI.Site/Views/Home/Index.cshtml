@@ -1,19 +1,21 @@
 ﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.AlertaViewModel>
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "";
 }
 
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.DescricaoDoacao)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.TipoAlerta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DescricaoDoacao)
+                Emitir
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,12 +23,15 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoDoacao)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.TipoAlerta)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoDoacao)
+                    @Html.ActionLink("Aviso", "EnviarAviso", new { }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Emergência", "EnviarEmergencia", new { }, new { @class = "btn btn-danger" })
                 </td>
-                <td></td>
             </tr>
         }
     </tbody>

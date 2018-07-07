@@ -15,7 +15,5 @@ namespace StarCastGroupDois.UI.Site.Controllers
         {
             return View(request);
         }
-
-
     }
 }
