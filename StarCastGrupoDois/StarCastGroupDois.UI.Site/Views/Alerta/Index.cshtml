@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.AlertaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Alertas Emitidos
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoAlerta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoDoacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAlerta)
+                </td>
+                <td>
+                    @Html.ActionLink("Cancelar", "CancelarAviso", new { }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Finalizar", "Finalizar", new { }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Visualizar Doadores", "Visualizar", new { }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" href="@Url.Action("Index", "Home")">Voltar</a>
