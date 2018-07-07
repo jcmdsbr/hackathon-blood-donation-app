@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StarCastGrupoDois.Application\StarCastGrupoDois.Application.csproj" />
     <ProjectReference Include="..\StarCastGrupoDois.Domain.Entities\StarCastGrupoDois.Domain.Entities.csproj" />
   </ItemGroup>
 

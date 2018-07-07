@@ -9,17 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B6708F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{4BF969F4-C0C4-497C-9ACE-0CFFBB966F2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGroupDois.UI.Site", "StarCastGroupDois.UI.Site\StarCastGroupDois.UI.Site.csproj", "{6A684058-0EEB-4CB5-96E4-C29F59284290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGroupDois.UI.Site", "StarCastGroupDois.UI.Site\StarCastGroupDois.UI.Site.csproj", "{6A684058-0EEB-4CB5-96E4-C29F59284290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Infra.Repository", "StarCastGrupoDois.Infra.Repository\StarCastGrupoDois.Infra.Repository.csproj", "{209849E3-22CD-4121-B47B-1C8C34C29956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGrupoDois.Infra.Repository", "StarCastGrupoDois.Infra.Repository\StarCastGrupoDois.Infra.Repository.csproj", "{209849E3-22CD-4121-B47B-1C8C34C29956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Infra.CrossCutting.IoC", "StarCastGrupoDois.Infra.CrossCutting.IoC\StarCastGrupoDois.Infra.CrossCutting.IoC.csproj", "{937E4E89-8932-47A0-B0FB-7BC5DAD7D8F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGrupoDois.Infra.CrossCutting.IoC", "StarCastGrupoDois.Infra.CrossCutting.IoC\StarCastGrupoDois.Infra.CrossCutting.IoC.csproj", "{937E4E89-8932-47A0-B0FB-7BC5DAD7D8F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Domain.Entities", "StarCastGrupoDois.Domain.Entities\StarCastGrupoDois.Domain.Entities.csproj", "{D9410468-5452-47EB-998A-A683837740E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGrupoDois.Domain.Entities", "StarCastGrupoDois.Domain.Entities\StarCastGrupoDois.Domain.Entities.csproj", "{D9410468-5452-47EB-998A-A683837740E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Domain", "StarCastGrupoDois.Domain\StarCastGrupoDois.Domain.csproj", "{41CF5FF5-DF2B-4DAB-AE35-695256C8BE05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGrupoDois.Domain", "StarCastGrupoDois.Domain\StarCastGrupoDois.Domain.csproj", "{41CF5FF5-DF2B-4DAB-AE35-695256C8BE05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Infra.CrossCutting", "StarCastGrupoDois.Infra.CrossCutting\StarCastGrupoDois.Infra.CrossCutting.csproj", "{5B23617B-1076-4B3F-B699-954CC3905E97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarCastGrupoDois.Infra.CrossCutting", "StarCastGrupoDois.Infra.CrossCutting\StarCastGrupoDois.Infra.CrossCutting.csproj", "{5B23617B-1076-4B3F-B699-954CC3905E97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{EF0E17EB-7326-4E17-A701-3D1B46893E68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarCastGrupoDois.Application", "StarCastGrupoDois.Application\StarCastGrupoDois.Application.csproj", "{31BA5B38-558F-48AA-BE48-66C811CE3FD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{5B23617B-1076-4B3F-B699-954CC3905E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B23617B-1076-4B3F-B699-954CC3905E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B23617B-1076-4B3F-B699-954CC3905E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BA5B38-558F-48AA-BE48-66C811CE3FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BA5B38-558F-48AA-BE48-66C811CE3FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BA5B38-558F-48AA-BE48-66C811CE3FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BA5B38-558F-48AA-BE48-66C811CE3FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{D9410468-5452-47EB-998A-A683837740E6} = {B6708FB5-AE05-463C-B183-D2F0B97169CD}
 		{41CF5FF5-DF2B-4DAB-AE35-695256C8BE05} = {B6708FB5-AE05-463C-B183-D2F0B97169CD}
 		{5B23617B-1076-4B3F-B699-954CC3905E97} = {4BF969F4-C0C4-497C-9ACE-0CFFBB966F2E}
+		{31BA5B38-558F-48AA-BE48-66C811CE3FD9} = {EF0E17EB-7326-4E17-A701-3D1B46893E68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAE7C5B6-F4FE-44B0-B3DD-22818887A6A2}

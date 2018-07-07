@@ -5,16 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
-    <Folder Include="UoW\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StarCastGrupoDois.Application\StarCastGrupoDois.Application.csproj" />
     <ProjectReference Include="..\StarCastGrupoDois.Domain.Entities\StarCastGrupoDois.Domain.Entities.csproj" />
   </ItemGroup>
 
