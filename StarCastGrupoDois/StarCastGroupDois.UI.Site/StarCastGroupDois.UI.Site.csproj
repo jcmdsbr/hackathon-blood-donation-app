@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StarCastGrupoDois.Domain.Entities\StarCastGrupoDois.Domain.Entities.csproj" />
+    <ProjectReference Include="..\StarCastGrupoDois.Infra.CrossCutting.Identity\StarCastGrupoDois.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\StarCastGrupoDois.Infra.CrossCutting.IoC\StarCastGrupoDois.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 

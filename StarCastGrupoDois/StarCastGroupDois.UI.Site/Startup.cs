@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using StarCastGroupDois.UI.Site.Configurations;
 using StarCastGrupoDois.Infra.CrossCutting.IoC;
 using StarCastGrupoDois.Infra.Repository.Context;
 
@@ -22,18 +23,21 @@ namespace StarCastGroupDois.UI.Site
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<StarCastGroupoDoisContexto>
-                (options =>  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddStarCastGroupoDoisContexto(Configuration);
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.Converters.Add(new StringEnumConverter());
-                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                });
+            //Todo=> implementar Identity
 
+            //services.AddIdentityContext(Configuration);
 
-           
+            //services.ConfigureApplicationCookie(options =>
+            //{
+            //    options.Cookie.Name = "StarCast";
+            //    options.LoginPath = "/Login/Login";
+            //});
+
+            //services.ConfigureIdentityOptions();
+
+            services.AddMvcWithCustomJson();
 
             services.AddResponseCaching();
 
@@ -52,6 +56,7 @@ namespace StarCastGroupDois.UI.Site
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseResponseCaching();
             app.UseMvcWithDefaultRoute();
         }

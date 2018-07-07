@@ -1,0 +1,52 @@
+﻿@model StarCastGroupDois.UI.Site.Models.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="~/lib/css/site.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="jumbotron">
+        <hr />
+        <div class="text-center">
+            <form class="form-signin" asp-controller="User" asp-action="Login" asp-antiforgery="true">
+                <div class="card mb-3">
+                    
+                    <div class="card-body">
+                        <input type="text" class="form-control" placeholder="Nome de usuário" autofocus asp-for="Username" />
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" asp-for="Password" />
+
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-lg btn-outline-dark btn-block" type="submit">
+                            Entrar
+                        </button>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>
+
+
