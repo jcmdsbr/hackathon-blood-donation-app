@@ -11,8 +11,8 @@ namespace StarCastGroupDois.UI.Site.Controllers
         {
             var alertaVM = new List<AlertaViewModel>
             {
-                new AlertaViewModel { DescricaoDoacao = "Remédio Doril", TipoAlerta = TipoAlerta.AguardandoDoacao },
-                new AlertaViewModel { DescricaoDoacao = "Remédio Gincobiloba", TipoAlerta = TipoAlerta.AguardandoDoacao }
+                new AlertaViewModel("Remédio Doril", TipoAlerta.AguardandoDoacao),
+                new AlertaViewModel("Remédio Gincobiloba", TipoAlerta.AguardandoDoacao)
 
             };
 

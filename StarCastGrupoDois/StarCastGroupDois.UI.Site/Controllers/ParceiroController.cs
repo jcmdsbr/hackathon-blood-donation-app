@@ -26,7 +26,7 @@ namespace StarCastGroupDois.UI.Site.Controllers
 
             TempData["Success"] = string.Format(Mensagem.CADASTRADO_COM_SUCESSO, "Parceiro");
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
 
