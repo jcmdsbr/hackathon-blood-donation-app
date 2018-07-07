@@ -33,5 +33,10 @@ namespace StarCastGrupoDois.Domain.Entities.Models
 
         public void CriarDataConclusao(DateTime dataConclusao) => DataConclusao = dataConclusao;
 
+        public void AlterarAlerta(TipoAlerta tipoAlerta)
+        {
+            TipoAlerta = tipoAlerta;
+        }
+
     }
 }

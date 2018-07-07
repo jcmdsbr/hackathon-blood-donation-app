@@ -1,22 +1,41 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StarCastGroupDois.UI.Site.Models;
+using StarCastGrupoDois.Application.Domain.Alerta;
 using StarCastGrupoDois.Domain.Entities.Fixed;
+using StarCastGrupoDois.Domain.Entities.Models;
+using System;
 using System.Collections.Generic;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
     public class AlertaController : Controller
     {
+        private readonly IAlertaService _alertaService;
+
+        public AlertaController(IAlertaService alertaService)
+        {
+            _alertaService = alertaService;
+        }
+
         public IActionResult Index()
         {
-            var alertaVM = new List<AlertaViewModel>
-            {
-                new AlertaViewModel { DescricaoDoacao = "Remédio Doril", TipoAlerta = TipoAlerta.AguardandoDoacao },
-                new AlertaViewModel { DescricaoDoacao = "Remédio Gincobiloba", TipoAlerta = TipoAlerta.AguardandoDoacao }
-
-            };
+            var alertaVM = (List<Alerta>)_alertaService.BuscarAlertas();
 
             return View(alertaVM);
+        }
+        public IActionResult CancelarAviso(Guid codigoAlerta)
+        {
+            _alertaService.AlterarStatus(codigoAlerta, TipoAlerta.Cancelado);
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Finalizar(Guid codigoAlerta)
+        {
+            _alertaService.AlterarStatus(codigoAlerta, TipoAlerta.Finalizado);
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Visualizar(Guid codigoAlerta)
+        {
+            return View();
         }
     }
 }

@@ -33,7 +33,7 @@ namespace StarCastGroupDois.UI.Site.Controllers
         {
             _doacaoService.Salvar((Doacao) request);
             TempData["Success"] = "Doação cadastrada com sucesso";
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
