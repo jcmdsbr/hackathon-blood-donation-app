@@ -1,4 +1,5 @@
-﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.AlertaViewModel>
+﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.DoacaoViewModel>
+@using StarCastGrupoDois.Domain.Entities.Fixed;
 
 @{
     ViewData["Title"] = "";
@@ -8,10 +9,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DescricaoDoacao)
+                Doações Cadastradas
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoAlerta)
+                Tipo Doação
             </th>
             <th>
                 Emitir
@@ -23,10 +24,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoDoacao)
+                    @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TipoAlerta)
+                    @Html.DisplayFor(modelItem => item.TipoDoacao)
                 </td>
                 <td>
                     @Html.ActionLink("Aviso", "EnviarAviso", new { }, new { @class = "btn btn-success" })
