@@ -22,6 +22,12 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
                 .HasMaxLength(50)
                 .IsRequired();
 
+            builder.Property(c => c.Desconto)
+                .HasColumnName("dc_Desconto")
+                .HasColumnType("varchar(100)")
+                .HasMaxLength(100)
+                .IsRequired();
+
 
             // Map Value Object
             builder.OwnsOne(s => s.Cnpj, cb =>

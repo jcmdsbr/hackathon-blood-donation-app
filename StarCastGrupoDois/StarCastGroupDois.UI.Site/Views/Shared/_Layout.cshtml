@@ -14,31 +14,29 @@
 </head>
 
 <body>
-
-    @*<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="dropdown">
-                            <a class="btn btn-primary dropdown-toggle white-color" id="dropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cadastrar
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownCadastrar">
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                        </li>
-
-                        <li class="nav-item">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>*@
+    <center><h1>Sistema Grupo 2</h1></center>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index" title="Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Doacao" asp-action="Index" title="Doacao">Cadastrar Doações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Alerta" asp-action="Index" title="Alerta">Cadastrar Alertas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Parceiro" asp-action="Index" title="Parceiro">Cadastrar Parceiros</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <br />
 
     <section>
+        <center><h2>@ViewData["Title"]</h2></center>
         <div class="container"> @RenderBody() </div>
     </section>
 
@@ -46,6 +44,9 @@
     <script src="~/lib/js/validate.min.js"></script>
 
     @{
+        <script type="text/javascript">
+            $('.cnpj').mask('99.999.999/9999-99', { reverse: true });
+        </script>
 
         if (!string.IsNullOrEmpty(TempData["ErrorNotifications"] as string))
         {
