@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StarCastGroupDois.UI.Site.Models;
+using System.Collections.Generic;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
@@ -6,7 +8,7 @@ namespace StarCastGroupDois.UI.Site.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new List<AlertaViewModel>());
         }
     }
 }
