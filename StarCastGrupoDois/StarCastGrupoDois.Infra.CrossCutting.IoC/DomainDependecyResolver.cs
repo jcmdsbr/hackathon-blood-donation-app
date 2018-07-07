@@ -19,6 +19,8 @@ namespace StarCastGrupoDois.Infra.CrossCutting.IoC
             services.AddScoped<IAlertaQuery, AlertaRepositorio>();
             services.AddScoped<IAlertaService, AlertaService>();
 
+            services.AddScoped<IEnvioEmailService, EnvioEmailService>();
+
             services.AddScoped<IDoacaoQuery, DoacaoRepositorio>();
             services.AddScoped<IDoacaoService, DoacaoService>();
 

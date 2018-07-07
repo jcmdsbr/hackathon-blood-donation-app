@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StarCastGroupDois.UI.Site.Models;
 using StarCastGrupoDois.Application.Domain.Alerta;
-using StarCastGrupoDois.Domain.Entities.Fixed;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
@@ -18,18 +18,9 @@ namespace StarCastGroupDois.UI.Site.Controllers
         public IActionResult Index()
         {
 
-            var teste = _alertaQuery.List();
+            var alertaVM = _alertaQuery.List().Select(x => (AlertaViewModel)x);
 
-            var alertaVM = new List<AlertaViewModel>
-            {
-                new AlertaViewModel { DescricaoDoacao = "Sangue A+", TipoAlerta = TipoAlerta.Finalizado },
-                new AlertaViewModel { DescricaoDoacao = "Remédio Doril", TipoAlerta = TipoAlerta.AguardandoDoacao },
-                new AlertaViewModel { DescricaoDoacao = "Remédio Gincobiloba", TipoAlerta = TipoAlerta.AguardandoDoacao },
-                new AlertaViewModel { DescricaoDoacao = "Orgão Coração", TipoAlerta = TipoAlerta.Cancelado },
-
-            };
-
-            return View(alertaVM);
+            return View(alertaVM.Any() ? new List<AlertaViewModel>() : alertaVM);
         }
     }
 }
