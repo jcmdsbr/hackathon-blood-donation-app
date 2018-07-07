@@ -4,7 +4,7 @@ using StarCastGrupoDois.Domain.Entities.Models;
 
 namespace StarCastGrupoDois.Infra.Repository.Mapping
 {
-    class AlertaDoadorMap : IEntityTypeConfiguration<AlertaDoador>
+    public class AlertaDoadorMap : IEntityTypeConfiguration<AlertaDoador>
     {
         public void Configure(EntityTypeBuilder<AlertaDoador> builder)
         {
@@ -12,14 +12,11 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
 
             builder.HasKey(c => new { c.CodigoAlerta, AnimalId = c.CodigoDoador });
 
-
             builder.Property(f => f.CodigoAlerta)
                 .HasColumnName("cd_alerta");
 
-
             builder.Property(f => f.CodigoDoador)
                 .HasColumnName("cd_doador");
-
 
             builder.HasOne(s => s.Alerta)
                 .WithMany()

@@ -12,6 +12,7 @@ namespace StarCastGrupoDois.Infra.Repository.Context
         public DbSet<Doacao> Doacoes { get; set; }
         public DbSet<Parceiro> Parceiros { get; set; }
         public DbSet<Alerta> Alertas { get; set; }
+        public DbSet<AlertaDoador> AlertasDoadores { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,6 +21,7 @@ namespace StarCastGrupoDois.Infra.Repository.Context
             modelBuilder.ApplyConfiguration(new DoacaoMap());
             modelBuilder.ApplyConfiguration(new ParceiroMap());
             modelBuilder.ApplyConfiguration(new AlertaMap());
+            modelBuilder.ApplyConfiguration(new AlertaDoadorMap());
 
             base.OnModelCreating(modelBuilder);
         }
