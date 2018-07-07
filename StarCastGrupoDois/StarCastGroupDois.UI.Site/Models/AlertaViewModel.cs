@@ -1,4 +1,5 @@
 ﻿using StarCastGrupoDois.Domain.Entities.Fixed;
+using System;
 using StarCastGrupoDois.Domain.Entities.Models;
 using System.ComponentModel;
 
@@ -26,5 +27,7 @@ namespace StarCastGroupDois.UI.Site.Models
 
             return new AlertaViewModel(alerta.Doacao != null ? alerta.Doacao.Descricao : "", alerta.TipoAlerta);
         }
+
+        public Guid Codigo { get; set; }
     }
 }
