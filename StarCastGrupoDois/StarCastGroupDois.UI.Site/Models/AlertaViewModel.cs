@@ -1,10 +1,14 @@
 ﻿using StarCastGrupoDois.Domain.Entities.Fixed;
+using System.ComponentModel;
 
 namespace StarCastGroupDois.UI.Site.Models
 {
     public class AlertaViewModel
     {
-        public TipoAlerta TipoAlerta { get; set; }
+        [DisplayName("Doações Cadastradas")]
         public string DescricaoDoacao { get; set; }
+
+        [DisplayName("Status")]
+        public TipoAlerta TipoAlerta { get; set; }
     }
 }

@@ -1,0 +1,95 @@
+﻿@model StarCastGroupDois.UI.Site.Models.DoacaoViewModel
+@using StarCastGrupoDois.Domain.Entities.Fixed;
+@{
+    ViewData["Title"] = "Cadastrar Doações";
+}
+<hr />
+<div class="container">
+    <form asp-action="Index">
+        <fieldset>
+            <legend>Preencher as informações abaixo da doação</legend>
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="TipoDoacao" class="control-label">Tipo de Necessidade: </label>
+                        <select asp-for="TipoDoacao" class="form-control" asp-items="ViewBag.TipoDoacao" id="drpTipoDoacao"></select>
+                        <span asp-validation-for="TipoDoacao" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none" id="divDescricao">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label asp-for="Descricao" class="control-label">Descrição: </label>
+                            <textarea asp-for="Descricao" class="form-control"></textarea>
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none" id="divTipoSangue">
+                <div class="row">
+                    <div class="col-md-2">
+                            <label asp-for="DescricaoSangue" class="control-label">Tipo Sanguineo: </label>
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">A+</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.A_POSITIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">A-</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.A_NEGATIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">B+</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.B_POSITIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">B-</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.B_NEGATIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">AB+</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.AB_POSITIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">AB-</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.AB_NEGATIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">O+</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.O_POSITIVO)" />
+                    </div>
+                    <div class="col-md-1">
+                        <label asp-for="DescricaoSangue" class="control-label">O-</label>
+                        <input asp-for="DescricaoSangue" type="radio" value="@((int)TipoSangue.O_NEGATIVO)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span asp-validation-for="DescricaoSangue" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                        <input type="submit" value="Salvar e Emitir Aviso" class="btn btn-primary" />
+                        <button class="btn btn-danger" asp-controller="Home">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        var tipoDoacaoSangue = "@((int)TipoDoacao.Sangue)";
+    </script>
+    <script src="~/src/Doacao/Index.js"></script>
+}
