@@ -1,14 +1,9 @@
 ﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.AlertaViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Controlar Alertas";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -32,7 +27,7 @@
                     @Html.DisplayFor(modelItem => item.TipoAlerta)
                 </td>
                 <td>
-                    @Html.ActionLink("Cancelar", "CancelarAviso", new { }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Cancelar", "CancelarAviso", new { }, new { @class = "btn btn-secondary" })
                     @Html.ActionLink("Finalizar", "Finalizar", new { }, new { @class = "btn btn-primary" })
                     @Html.ActionLink("Visualizar Doadores", "Visualizar", new { }, new { @class = "btn btn-success" })
                 </td>
@@ -40,4 +35,4 @@
         }
     </tbody>
 </table>
-<a class="btn btn-primary" href="@Url.Action("Index", "Home")">Voltar</a>
+<a class="btn btn-secondary" href="@Url.Action("Index", "Home")">Voltar</a>

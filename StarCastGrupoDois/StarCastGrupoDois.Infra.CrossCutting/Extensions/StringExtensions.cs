@@ -4,7 +4,7 @@
     {
         public static string UnMask(this string value)
         {
-            return value.Replace(".", string.Empty).Replace("-", string.Empty);
+            return value.Replace(".", string.Empty).Replace("-", string.Empty).Replace("/", string.Empty);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using StarCastGrupoDois.Infra.CrossCutting.Messages;
+﻿using StarCastGrupoDois.Domain.Entities.Models;
+using StarCastGrupoDois.Infra.CrossCutting.Messages;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -17,5 +18,14 @@ namespace StarCastGroupDois.UI.Site.Models
         [Required(ErrorMessage = Mensagem.CAMPO_OBRIGATORIO)]
         [DisplayName("Benefícios")]
         public string Desconto { get; set; }
+
+        public static implicit operator Parceiro(ParceiroViewModel model)
+        {
+
+            if (model == null)
+                return null;
+
+            return new Parceiro(model.Cnpj, model.Nome, model.Desconto);
+        }
     }
 }

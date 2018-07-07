@@ -1,9 +1,6 @@
 ﻿using StarCastGrupoDois.Application.Repository.Core;
 using StarCastGrupoDois.Application.Repository.Parceiro;
 using StarCastGrupoDois.Domain.Core;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace StarCastGrupoDois.Domain.Parceiro
 {
@@ -19,6 +16,7 @@ namespace StarCastGrupoDois.Domain.Parceiro
         }
         public override void Salvar(StarCastGrupoDois.Domain.Entities.Models.Parceiro obj)
         {
+            obj.CriarNovoCodigo();
             _parceiroRepositorio.Add(obj);
 
             Commit();
