@@ -1,0 +1,33 @@
+﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.AlertaViewModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoAlerta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoDoacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAlerta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoDoacao)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

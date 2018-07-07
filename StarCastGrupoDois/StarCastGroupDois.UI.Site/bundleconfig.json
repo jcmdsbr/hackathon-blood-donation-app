@@ -1,0 +1,40 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/lib/css/site.min.css",
+    "inputFiles": [
+      "node_modules/bootstrap/dist/css/bootstrap.css",
+      "node_modules/toastr/build/toastr.min.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/lib/js/site.min.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/bootstrap/dist/js/bootstrap.js",
+      "node_modules/toastr/build/toastr.min.js",
+      "node_modules/jquery-mask-plugin/dist/jquery.mask.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/lib/js/validate.min.js",
+    "inputFiles": [
+      "node_modules/jquery-validation/dist/jquery.validate.js",
+      "node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "adjustRelativePaths": false
+    }
+  }
+]

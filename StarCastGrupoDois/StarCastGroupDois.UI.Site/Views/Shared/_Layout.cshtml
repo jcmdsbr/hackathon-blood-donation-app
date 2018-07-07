@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="~/lib/css/site.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle white-color" id="dropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cadastrar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownCadastrar">
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                    </li>
+
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br />
+
+    <section class="portfolio bg-primary">
+        <div class="container"> @RenderBody() </div>
+    </section>
+
+    <script src="~/lib/js/site.min.js"></script>
+    <script src="~/lib/js/validate.min.js"></script>
+
+    @{
+
+        if (!string.IsNullOrEmpty(TempData["ErrorNotifications"] as string))
+        {
+            <script type="text/javascript">
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = "toast-bottom-right";
+            toastr.error("@Html.Raw(TempData["ErrorNotifications"])");
+            </script>
+        }
+
+        if (!string.IsNullOrEmpty(TempData["Success"] as string))
+        {
+            <script type="text/javascript">
+            toastr.options.closeButton = true;
+                toastr.options.positionClass = "toast-bottom-full-width";
+            toastr.success("@Html.Raw(TempData["Success"])");
+            </script>
+        }
+    }
+
+    @RenderSection("scripts", false)
+
+</body>
+
+</html>
