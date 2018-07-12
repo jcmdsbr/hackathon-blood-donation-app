@@ -1,34 +1,35 @@
-﻿$(function () {
+﻿$(function() {
     jsDoacaoIndex.acoes.validarTipoDoacao();
     jsDoacaoIndex.listener();
 });
 var jsDoacaoIndex = {
-    listener: function () {
+    listener: function() {
         jsDoacaoIndex.acoes.carregar();
     },
     acoes: {
-        carregar: function () {
+        carregar: function() {
             this.change();
             this.click();
         },
-        change: function () {
-            $("#drpTipoDoacao").on('change', function () {
-                jsDoacaoIndex.acoes.validarTipoDoacao();
-            });
+        change: function() {
+            $("#drpTipoDoacao").on("change",
+                function() {
+                    jsDoacaoIndex.acoes.validarTipoDoacao();
+                });
         },
-        click: function () {
-            $("#btnEmitirAviso").on('click', function () {
-                event.preventDefault();
-                $("#isEmitirAviso").val(true);
-                $("#formDoacao").submit();
-            });
+        click: function() {
+            $("#btnEmitirAviso").on("click",
+                function() {
+                    event.preventDefault();
+                    $("#isEmitirAviso").val(true);
+                    $("#formDoacao").submit();
+                });
         },
-        validarTipoDoacao: function () {
+        validarTipoDoacao: function() {
             if ($("#drpTipoDoacao").val() == tipoDoacaoSangue) {
                 $("#divTipoSangue").show();
                 $("#divDescricao").hide();
-            }
-            else {
+            } else {
                 $("#divTipoSangue").hide();
                 $("#divDescricao").show();
             }

@@ -5,6 +5,5 @@
         Sangue = 1,
         Remedio,
         Orgao
-
     }
 }

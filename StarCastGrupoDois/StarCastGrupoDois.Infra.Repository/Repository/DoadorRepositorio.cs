@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using StarCastGrupoDois.Application.Domain.Doador;
-using StarCastGrupoDois.Application.Repository.Doador;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using StarCastGrupoDois.Application.Domain.Queries;
+using StarCastGrupoDois.Application.Repository;
 using StarCastGrupoDois.Domain.Entities.Models;
 using StarCastGrupoDois.Domain.Entities.ValueObject;
 using StarCastGrupoDois.Infra.Repository.Context;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace StarCastGrupoDois.Infra.Repository.Repository
 {
@@ -17,7 +17,7 @@ namespace StarCastGrupoDois.Infra.Repository.Repository
 
         public List<Email> GetAllEmails()
         {
-           return DbSet.AsNoTracking().Select(x=>x.Email).ToList();
+            return DbSet.AsNoTracking().Select(x => x.Email).ToList();
         }
     }
 }

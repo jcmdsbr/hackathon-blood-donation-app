@@ -1,4 +1,4 @@
-﻿@model StarCastGroupDois.UI.Site.Models.LoginViewModel
+﻿@model LoginViewModel
 
 @{
     Layout = null;
@@ -8,6 +8,8 @@
 <html lang="en">
 
 <head>
+    <title>Login</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -20,33 +22,28 @@
 <body>
     <div class="jumbotron">
         <hr />
-        <div class="text-center">
-            <form class="form-signin" asp-controller="User" asp-action="Login" asp-antiforgery="true">
-                <div class="card mb-3">
-                    
-                    <div class="card-body">
+        <div class="container-fluid">
+            <form class="form-control" asp-controller="Login" asp-action="Login" asp-antiforgery="true">
+
+                <div class="form-control">
+                    <div class="row">
                         <input type="text" class="form-control" placeholder="Nome de usuário" autofocus asp-for="Username" />
                         <input type="password" id="inputPassword" class="form-control" placeholder="Senha" asp-for="Password" />
-
                     </div>
-                    <div class="card-body">
-                        <button class="btn btn-lg btn-outline-dark btn-block" type="submit">
-                            Entrar
-                        </button>
-                    </div>
-                    <div class="card-footer bg-light">
-                        <div asp-validation-summary="All" class="text-danger"></div>
-                    </div>
+                </div>
+                <div class="form-control">
+                    <button class="btn btn-lg btn-outline-dark btn-block" type="submit">
+                        Entrar
+                    </button>
+                </div>
+                <div class="card-footer bg-light">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                 </div>
             </form>
         </div>
     </div>
-
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
 </body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 </html>
-
-

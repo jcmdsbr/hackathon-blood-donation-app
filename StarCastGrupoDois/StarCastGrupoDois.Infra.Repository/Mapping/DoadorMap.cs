@@ -23,10 +23,10 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
 
 
             builder.Property(c => c.Telefone)
-              .HasColumnName("nm_telefone")
-              .HasColumnType("varchar(11)")
-              .HasMaxLength(11)
-              .IsRequired();
+                .HasColumnName("nm_telefone")
+                .HasColumnType("varchar(11)")
+                .HasMaxLength(11)
+                .IsRequired();
 
             builder.HasMany(c => c.AlertasConfirmados)
                 .WithOne(x => x.Doador);

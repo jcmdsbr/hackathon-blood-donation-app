@@ -1,5 +1,5 @@
-﻿using StarCastGrupoDois.Application.Domain.Parceiro;
-using StarCastGrupoDois.Application.Repository.Parceiro;
+﻿using StarCastGrupoDois.Application.Domain.Queries;
+using StarCastGrupoDois.Application.Repository;
 using StarCastGrupoDois.Domain.Entities.Models;
 using StarCastGrupoDois.Infra.Repository.Context;
 

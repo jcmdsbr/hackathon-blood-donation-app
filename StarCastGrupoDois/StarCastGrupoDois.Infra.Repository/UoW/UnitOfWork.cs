@@ -1,8 +1,5 @@
-﻿using StarCastGrupoDois.Application.Repository.Core;
+﻿using StarCastGrupoDois.Application.Core;
 using StarCastGrupoDois.Infra.Repository.Context;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace StarCastGrupoDois.Infra.Repository.UoW
 {

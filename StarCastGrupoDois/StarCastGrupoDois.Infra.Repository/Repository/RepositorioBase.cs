@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StarCastGrupoDois.Application.Core;
 using StarCastGrupoDois.Infra.Repository.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using StarCastGrupoDois.Application.Repository.Core;
-using StarCastGrupoDois.Application.Domain.Core;
 
 namespace StarCastGrupoDois.Infra.Repository.Repository
 {
-    public abstract class RepositorioBase<TEntity>: IRepository<TEntity>, IQuery<TEntity>  where TEntity : class
+    public abstract class RepositorioBase<TEntity> : IRepository<TEntity>, IQuery<TEntity> where TEntity : class
     {
         protected readonly StarCastGroupoDoisContexto Db;
         protected readonly DbSet<TEntity> DbSet;

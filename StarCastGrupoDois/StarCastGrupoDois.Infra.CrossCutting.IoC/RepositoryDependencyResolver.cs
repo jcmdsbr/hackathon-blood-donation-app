@@ -1,10 +1,6 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
-using StarCastGrupoDois.Application.Repository.Alerta;
-using StarCastGrupoDois.Application.Repository.Core;
-using StarCastGrupoDois.Application.Repository.Doacao;
-using StarCastGrupoDois.Application.Repository.Doador;
-using StarCastGrupoDois.Application.Repository.Parceiro;
+﻿using Microsoft.Extensions.DependencyInjection;
+using StarCastGrupoDois.Application.Core;
+using StarCastGrupoDois.Application.Repository;
 using StarCastGrupoDois.Infra.Repository.Context;
 using StarCastGrupoDois.Infra.Repository.Repository;
 using StarCastGrupoDois.Infra.Repository.UoW;

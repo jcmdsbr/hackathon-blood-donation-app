@@ -16,13 +16,13 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
                 .HasColumnName("cd_alerta");
 
             builder.Property(c => c.TipoAlerta)
-                 .HasColumnName("cd_tipo_alerta")
+                .HasColumnName("cd_tipo_alerta")
                 .IsRequired();
 
 
             builder.Property(c => c.DataConclusao)
-                 .HasColumnType("datetime")
-                 .HasColumnName("dt_conclusao");
+                .HasColumnType("datetime")
+                .HasColumnName("dt_conclusao");
 
 
             builder.Property(c => c.DataEmissao)
@@ -37,7 +37,6 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
 
             builder.HasMany(c => c.DoadoresConfirmados)
                 .WithOne(x => x.Alerta);
-
         }
     }
 }

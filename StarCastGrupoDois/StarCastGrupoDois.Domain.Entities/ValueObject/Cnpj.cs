@@ -6,7 +6,6 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
 {
     public class Cnpj : ValueObject<Cnpj>
     {
-
         protected Cnpj()
         {
         }
@@ -16,7 +15,9 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
             Numero = value.UnMask();
         }
 
-        public string Numero { get; private set; }
+        public string Numero { get; }
+
+        public string Format => Convert.ToUInt64(Numero).ToString(@"00\.000\.000/0000-00");
 
 
         protected override bool EqualsCore(Cnpj other)
@@ -28,8 +29,6 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
         {
             return Numero;
         }
-
-        public string Format => Convert.ToUInt64(Numero).ToString(@"00\.000\.000/0000-00");
 
         protected override int GetHashCodeCore()
         {

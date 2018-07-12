@@ -9,26 +9,28 @@ namespace StarCastGroupDois.UI.Site.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly SignInManager<Usuario> _signInManager;
 
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<Usuario> _userManager;
 
-        public LoginController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public LoginController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
-        [HttpGet, AllowAnonymous]
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost, AllowAnonymous, ValidateAntiForgeryToken]
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-
             if (!ModelState.IsValid)
                 return View(model);
 
@@ -49,4 +51,3 @@ namespace StarCastGroupDois.UI.Site.Controllers
         }
     }
 }
-

@@ -4,7 +4,6 @@ using StarCastGrupoDois.Domain.Entities.Models;
 
 namespace StarCastGrupoDois.Infra.Repository.Mapping
 {
-
     internal class ParceiroMap : IEntityTypeConfiguration<Parceiro>
     {
         public void Configure(EntityTypeBuilder<Parceiro> builder)
@@ -40,4 +39,3 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
         }
     }
 }
-

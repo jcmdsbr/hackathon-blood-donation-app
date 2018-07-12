@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StarCastGroupDois.UI.Site.Models;
-using StarCastGrupoDois.Application.Domain.Parceiro;
+using StarCastGrupoDois.Application.Domain.Services;
 using StarCastGrupoDois.Infra.CrossCutting.Messages;
 
 namespace StarCastGroupDois.UI.Site.Controllers
@@ -24,11 +24,9 @@ namespace StarCastGroupDois.UI.Site.Controllers
         {
             _parceiroService.Salvar(request);
 
-            TempData["Success"] = string.Format(Mensagem.CADASTRADO_COM_SUCESSO, "Parceiro");
+            TempData["Success"] = string.Format(MensagensGerais.CADASTRADO_COM_SUCESSO, "Parceiro");
 
             return RedirectToAction("Index", "Home");
         }
-
-
     }
 }

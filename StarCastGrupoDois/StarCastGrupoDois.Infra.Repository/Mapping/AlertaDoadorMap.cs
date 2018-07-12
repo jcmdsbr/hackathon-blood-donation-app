@@ -10,7 +10,7 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
         {
             builder.ToTable("alertaDoador", "dbo");
 
-            builder.HasKey(c => new { c.CodigoAlerta, AnimalId = c.CodigoDoador });
+            builder.HasKey(c => new {c.CodigoAlerta, AnimalId = c.CodigoDoador});
 
             builder.Property(f => f.CodigoAlerta)
                 .HasColumnName("cd_alerta");

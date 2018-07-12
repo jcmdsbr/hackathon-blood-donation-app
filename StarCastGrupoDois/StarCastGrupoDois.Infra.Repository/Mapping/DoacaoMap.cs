@@ -21,14 +21,13 @@ namespace StarCastGrupoDois.Infra.Repository.Mapping
 
 
             builder.Property(c => c.Descricao)
-              .HasColumnName("dc_doacao")
-              .HasColumnType("varchar(100)")
-              .HasMaxLength(100)
-              .IsRequired();
+                .HasColumnName("dc_doacao")
+                .HasColumnType("varchar(100)")
+                .HasMaxLength(100)
+                .IsRequired();
 
             builder.HasMany(x => x.AlertasEmitidos)
                 .WithOne(x => x.Doacao);
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model StarCastGroupDois.UI.Site.Models.ParceiroViewModel
+﻿@model ParceiroViewModel
 
 @{
     ViewData["Title"] = "Cadastrar Parceiros";
@@ -33,6 +33,6 @@
         </form>
     </div>
 </div>
-
-
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

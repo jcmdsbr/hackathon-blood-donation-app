@@ -1,9 +1,4 @@
-﻿@model IEnumerable<StarCastGroupDois.UI.Site.Models.DoacaoViewModel>
-@using StarCastGrupoDois.Domain.Entities.Fixed;
-
-@{
-    ViewData["Title"] = "";
-}
+﻿@model IEnumerable<DoacaoViewModel>
 
 <table class="table">
     <thead>
@@ -30,8 +25,8 @@
                     @Html.DisplayFor(modelItem => item.TipoDoacao)
                 </td>
                 <td>
-                    @Html.ActionLink("Aviso", "EnviarAviso", new { }, new { @class = "btn btn-success disabled" })
-                    @Html.ActionLink("Emergência", "EnviarEmergencia", new { }, new { @class = "btn btn-danger disabled" })
+                    @Html.ActionLink("Aviso", "EnviarAviso", new { @class = "btn btn-success disabled" })
+                    @Html.ActionLink("Emergência", "EnviarEmergencia", new { @class = "btn btn-danger disabled" })
                 </td>
             </tr>
         }

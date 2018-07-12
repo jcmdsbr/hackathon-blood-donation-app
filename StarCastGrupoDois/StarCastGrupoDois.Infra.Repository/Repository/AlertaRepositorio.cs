@@ -1,5 +1,5 @@
-﻿using StarCastGrupoDois.Application.Domain.Alerta;
-using StarCastGrupoDois.Application.Repository.Alerta;
+﻿using StarCastGrupoDois.Application.Domain.Queries;
+using StarCastGrupoDois.Application.Repository;
 using StarCastGrupoDois.Domain.Entities.Models;
 using StarCastGrupoDois.Infra.Repository.Context;
 

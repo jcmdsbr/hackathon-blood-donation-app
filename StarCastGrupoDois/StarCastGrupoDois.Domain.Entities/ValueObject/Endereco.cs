@@ -13,14 +13,14 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
             Cidade = cidade;
         }
 
+        public string GetCidade => Cidade;
+
+        public string Cidade { get; }
+
         public override string ToString()
         {
             return Cidade;
         }
-
-        public string GetCidade => Cidade;
-
-        public string Cidade { get; private set; }
 
         protected override bool EqualsCore(Endereco other)
         {

@@ -14,7 +14,9 @@
 </head>
 
 <body>
-    <center><h1>Sistema Grupo 2</h1></center>
+    <div style="text-align: center;">
+        <h1>Sistema Grupo 2</h1>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -36,7 +38,9 @@
     <br />
 
     <section>
-        <center><h2>@ViewData["Title"]</h2></center>
+        <div style="text-align: center;">
+            <h2>@ViewData["Title"]</h2>
+        </div>
         <div class="container"> @RenderBody() </div>
     </section>
 
@@ -61,7 +65,7 @@
         {
             <script type="text/javascript">
             toastr.options.closeButton = true;
-                toastr.options.positionClass = "toast-bottom-full-width";
+            toastr.options.positionClass = "toast-bottom-full-width";
             toastr.success("@Html.Raw(TempData["Success"])");
             </script>
         }

@@ -1,7 +1,7 @@
-﻿using StarCastGrupoDois.Domain.Entities.Fixed;
+﻿using System.ComponentModel.DataAnnotations;
+using StarCastGrupoDois.Domain.Entities.Fixed;
 using StarCastGrupoDois.Domain.Entities.Models;
 using StarCastGrupoDois.Infra.CrossCutting.Messages;
-using System.ComponentModel.DataAnnotations;
 
 namespace StarCastGroupDois.UI.Site.Models
 {
@@ -9,7 +9,6 @@ namespace StarCastGroupDois.UI.Site.Models
     {
         public DoacaoViewModel()
         {
-
         }
 
         public DoacaoViewModel(string descricao, TipoDoacao tipoDoacao)
@@ -18,12 +17,15 @@ namespace StarCastGroupDois.UI.Site.Models
             TipoDoacao = tipoDoacao;
         }
 
-        [Required(ErrorMessage = Mensagem.CAMPO_OBRIGATORIO)]
+        [Required(ErrorMessage = MensagensGerais.CAMPO_OBRIGATORIO)]
         public string DescricaoSangue { get; set; }
-        [Required(ErrorMessage = Mensagem.CAMPO_OBRIGATORIO)]
+
+        [Required(ErrorMessage = MensagensGerais.CAMPO_OBRIGATORIO)]
         public string Descricao { get; set; }
-        [Required(ErrorMessage = Mensagem.CAMPO_OBRIGATORIO)]
+
+        [Required(ErrorMessage = MensagensGerais.CAMPO_OBRIGATORIO)]
         public TipoDoacao TipoDoacao { get; set; }
+
         public bool IsEmitirAviso { get; set; }
 
         public static implicit operator Doacao(DoacaoViewModel model)

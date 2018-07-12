@@ -6,7 +6,9 @@ namespace StarCastGrupoDois.Infra.Repository.Context
 {
     public class StarCastGroupoDoisContexto : DbContext
     {
-        public StarCastGroupoDoisContexto(DbContextOptions<StarCastGroupoDoisContexto> options) : base(options) { }
+        public StarCastGroupoDoisContexto(DbContextOptions<StarCastGroupoDoisContexto> options) : base(options)
+        {
+        }
 
         public DbSet<Doador> Doadores { get; set; }
         public DbSet<Doacao> Doacoes { get; set; }

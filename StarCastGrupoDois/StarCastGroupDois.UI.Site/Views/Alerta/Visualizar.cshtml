@@ -1,0 +1,44 @@
+﻿@model StarCastGrupoDois.Domain.Entities.Models.Alerta
+
+@{
+    ViewData["Title"] = "Visualizar";
+}
+
+<h2>Visualizar</h2>
+
+<div>
+    <h4>Alerta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoAlerta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoAlerta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmissao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataEmissao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataConclusao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataConclusao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoDoacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoDoacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+    </dl>
+</div>

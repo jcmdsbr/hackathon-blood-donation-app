@@ -7,16 +7,11 @@ using Newtonsoft.Json.Converters;
 using StarCastGrupoDois.Infra.CrossCutting.Identity;
 using StarCastGrupoDois.Infra.CrossCutting.Identity.Models;
 using StarCastGrupoDois.Infra.Repository.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace StarCastGroupDois.UI.Site.Configurations
 {
     public static class ServiceExtensions
     {
-
         public static void AddMvcWithCustomJson(this IServiceCollection services)
         {
             services.AddMvc()
@@ -30,8 +25,7 @@ namespace StarCastGroupDois.UI.Site.Configurations
         public static void AddStarCastGroupoDoisContexto(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<StarCastGroupoDoisContexto>(options =>
-             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
         public static void ConfigureIdentityOptions(this IServiceCollection services)
@@ -46,7 +40,6 @@ namespace StarCastGroupDois.UI.Site.Configurations
                 options.Password.RequireLowercase = false;
                 options.Password.RequiredUniqueChars = 0;
             });
-
         }
 
         public static void AddIdentityContext(this IServiceCollection services, IConfiguration configuration)
@@ -54,10 +47,9 @@ namespace StarCastGroupDois.UI.Site.Configurations
             services.AddDbContext<IdentityContexto>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<IdentityContexto>()
-            .AddDefaultTokenProviders();
-
+            services.AddIdentity<Usuario, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityContexto>()
+                .AddDefaultTokenProviders();
         }
     }
 }

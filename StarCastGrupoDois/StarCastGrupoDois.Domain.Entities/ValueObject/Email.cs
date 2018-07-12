@@ -13,12 +13,12 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
             Descricao = descricao;
         }
 
+        public string Descricao { get; }
+
         public override string ToString()
         {
             return Descricao;
         }
-
-        public string Descricao { get; private set; }
 
         protected override bool EqualsCore(Email other)
         {

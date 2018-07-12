@@ -8,70 +8,61 @@ namespace StarCastGrupoDois.Infra.Repository.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "dbo");
+                "dbo");
 
             migrationBuilder.CreateTable(
-                name: "doacao",
+                "doacao",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_doacao = table.Column<Guid>(nullable: false),
                     cd_tipoDoacao = table.Column<int>(nullable: false),
-                    dc_doacao = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                    dc_doacao = table.Column<string>("varchar(100)", maxLength: 100, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_doacao", x => x.cd_doacao);
-                });
+                constraints: table => { table.PrimaryKey("PK_doacao", x => x.cd_doacao); });
 
             migrationBuilder.CreateTable(
-                name: "doador",
+                "doador",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_doador = table.Column<Guid>(nullable: false),
-                    email_doador = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false),
-                    nm_doador = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    nm_telefone = table.Column<string>(type: "varchar(11)", maxLength: 11, nullable: false),
-                    endereco_cidade = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
+                    email_doador = table.Column<string>("varchar(14)", maxLength: 14, nullable: false),
+                    nm_doador = table.Column<string>("varchar(50)", maxLength: 50, nullable: false),
+                    nm_telefone = table.Column<string>("varchar(11)", maxLength: 11, nullable: false),
+                    endereco_cidade = table.Column<string>("varchar(30)", maxLength: 30, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_doador", x => x.cd_doador);
-                });
+                constraints: table => { table.PrimaryKey("PK_doador", x => x.cd_doador); });
 
             migrationBuilder.CreateTable(
-                name: "parceiro",
+                "parceiro",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_parceiro = table.Column<Guid>(nullable: false),
-                    nm_cnpj = table.Column<string>(type: "varchar(14)", nullable: false),
-                    nm_parceiro = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    dc_Desconto = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                    nm_cnpj = table.Column<string>("varchar(14)", nullable: false),
+                    nm_parceiro = table.Column<string>("varchar(50)", maxLength: 50, nullable: false),
+                    dc_Desconto = table.Column<string>("varchar(100)", maxLength: 100, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_parceiro", x => x.cd_parceiro);
-                });
+                constraints: table => { table.PrimaryKey("PK_parceiro", x => x.cd_parceiro); });
 
             migrationBuilder.CreateTable(
-                name: "alerta",
+                "alerta",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_alerta = table.Column<Guid>(nullable: false),
                     cd_tipo_alerta = table.Column<int>(nullable: false),
-                    dt_emissao = table.Column<DateTime>(type: "datetime", nullable: false),
-                    dt_conclusao = table.Column<DateTime>(type: "datetime", nullable: true),
+                    dt_emissao = table.Column<DateTime>("datetime", nullable: false),
+                    dt_conclusao = table.Column<DateTime>("datetime", nullable: true),
                     CodigoDoacao = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_alerta", x => x.cd_alerta);
                     table.ForeignKey(
-                        name: "FK_alerta_doacao_CodigoDoacao",
-                        column: x => x.CodigoDoacao,
+                        "FK_alerta_doacao_CodigoDoacao",
+                        x => x.CodigoDoacao,
                         principalSchema: "dbo",
                         principalTable: "doacao",
                         principalColumn: "cd_doacao",
@@ -79,7 +70,7 @@ namespace StarCastGrupoDois.Infra.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "alertaDoador",
+                "alertaDoador",
                 schema: "dbo",
                 columns: table => new
                 {
@@ -90,31 +81,31 @@ namespace StarCastGrupoDois.Infra.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_alertaDoador", x => new { x.cd_alerta, x.cd_doador });
+                    table.PrimaryKey("PK_alertaDoador", x => new {x.cd_alerta, x.cd_doador});
                     table.ForeignKey(
-                        name: "FK_alertaDoador_alerta_AlertaCodigo1",
-                        column: x => x.AlertaCodigo1,
+                        "FK_alertaDoador_alerta_AlertaCodigo1",
+                        x => x.AlertaCodigo1,
                         principalSchema: "dbo",
                         principalTable: "alerta",
                         principalColumn: "cd_alerta",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_alertaDoador_alerta_cd_alerta",
-                        column: x => x.cd_alerta,
+                        "FK_alertaDoador_alerta_cd_alerta",
+                        x => x.cd_alerta,
                         principalSchema: "dbo",
                         principalTable: "alerta",
                         principalColumn: "cd_alerta",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_alertaDoador_doador_cd_doador",
-                        column: x => x.cd_doador,
+                        "FK_alertaDoador_doador_cd_doador",
+                        x => x.cd_doador,
                         principalSchema: "dbo",
                         principalTable: "doador",
                         principalColumn: "cd_doador",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_alertaDoador_doador_DoadorCodigo1",
-                        column: x => x.DoadorCodigo1,
+                        "FK_alertaDoador_doador_DoadorCodigo1",
+                        x => x.DoadorCodigo1,
                         principalSchema: "dbo",
                         principalTable: "doador",
                         principalColumn: "cd_doador",
@@ -122,25 +113,25 @@ namespace StarCastGrupoDois.Infra.Repository.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_alerta_CodigoDoacao",
+                "IX_alerta_CodigoDoacao",
                 schema: "dbo",
                 table: "alerta",
                 column: "CodigoDoacao");
 
             migrationBuilder.CreateIndex(
-                name: "IX_alertaDoador_AlertaCodigo1",
+                "IX_alertaDoador_AlertaCodigo1",
                 schema: "dbo",
                 table: "alertaDoador",
                 column: "AlertaCodigo1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_alertaDoador_cd_doador",
+                "IX_alertaDoador_cd_doador",
                 schema: "dbo",
                 table: "alertaDoador",
                 column: "cd_doador");
 
             migrationBuilder.CreateIndex(
-                name: "IX_alertaDoador_DoadorCodigo1",
+                "IX_alertaDoador_DoadorCodigo1",
                 schema: "dbo",
                 table: "alertaDoador",
                 column: "DoadorCodigo1");
@@ -149,24 +140,24 @@ namespace StarCastGrupoDois.Infra.Repository.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "alertaDoador",
-                schema: "dbo");
+                "alertaDoador",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "parceiro",
-                schema: "dbo");
+                "parceiro",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "alerta",
-                schema: "dbo");
+                "alerta",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "doador",
-                schema: "dbo");
+                "doador",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "doacao",
-                schema: "dbo");
+                "doacao",
+                "dbo");
         }
     }
 }
