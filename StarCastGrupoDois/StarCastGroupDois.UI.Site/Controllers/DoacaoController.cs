@@ -9,9 +9,10 @@ using System.Linq;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
-    public class DoacaoController : Controller
+    public class DoacaoController : BaseController
     {
         private readonly IDoacaoService _doacaoService;
+        private readonly IEnumerable<TipoDoacao> _tipoDoacaos = Enum.GetValues(typeof(TipoDoacao)).Cast<TipoDoacao>();
 
         public DoacaoController(IDoacaoService doacaoService)
         {
@@ -20,10 +21,9 @@ namespace StarCastGroupDois.UI.Site.Controllers
 
         public IActionResult Index()
         {
-            var listaTipoDoacao = Enum.GetValues(typeof(TipoDoacao)).Cast<TipoDoacao>().ToList();
-            ViewBag.TipoDoacao = new List<SelectListItem>(listaTipoDoacao.Select(x =>
-                new SelectListItem { Text = x.ToString(), Value = ((int)x).ToString() }));
-            var listaTipoSanguineo = Enum.GetValues(typeof(TipoSangue)).Cast<TipoSangue>().ToList();
+
+            ViewBag.TipoDoacao = _tipoDoacaos.Select(x => new SelectListItem { Text = x.ToString(), Value = ((int)x).ToString() });
+
             return View();
         }
 
@@ -31,8 +31,8 @@ namespace StarCastGroupDois.UI.Site.Controllers
         public IActionResult Index(DoacaoViewModel request)
         {
             _doacaoService.Salvar(request);
-            TempData["Success"] = "Doação cadastrada com sucesso";
-            return RedirectToAction("Index", "Home");
+
+            return NotificarSucesso("Doação cadastrada com sucesso", () => RedirectToAction("Index", "Home"));
         }
     }
 }

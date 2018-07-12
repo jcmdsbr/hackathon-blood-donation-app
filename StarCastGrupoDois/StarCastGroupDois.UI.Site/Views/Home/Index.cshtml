@@ -25,8 +25,8 @@
                     @Html.DisplayFor(modelItem => item.TipoDoacao)
                 </td>
                 <td>
-                    @Html.ActionLink("Aviso", "EnviarAviso", new { @class = "btn btn-success disabled" })
-                    @Html.ActionLink("Emergência", "EnviarEmergencia", new { @class = "btn btn-danger disabled" })
+                    @Html.ActionLink("Aviso", "EnviarAviso", new { }, new { @class = "btn btn-success " })
+                    @Html.ActionLink("Emergência", "EnviarEmergencia", new { }, new { @class = "btn btn-danger " })
                 </td>
             </tr>
         }

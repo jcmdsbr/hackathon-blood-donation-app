@@ -4,9 +4,7 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
 {
     public class Endereco : ValueObject<Endereco>
     {
-        protected Endereco()
-        {
-        }
+        protected Endereco() { }
 
         public Endereco(string cidade)
         {
@@ -15,7 +13,7 @@ namespace StarCastGrupoDois.Domain.Entities.ValueObject
 
         public string GetCidade => Cidade;
 
-        public string Cidade { get; }
+        public string Cidade { get; private set; }
 
         public override string ToString()
         {

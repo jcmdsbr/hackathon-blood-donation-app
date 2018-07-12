@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
-    public class AlertaController : Controller
+    public class AlertaController : BaseController
     {
         private readonly IAlertaQuery _alertaQuery;
         private readonly IAlertaService _alertaService;

@@ -15,35 +15,30 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="~/lib/css/site.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
+    <script src="~/lib/js/site.min.js"></script>
+    <script src="~/lib/js/validate.min.js"></script>
 </head>
-<body>
-    <div class="jumbotron">
-        <hr />
-        <div class="container-fluid">
-            <form class="form-control" asp-controller="Login" asp-action="Login" asp-antiforgery="true">
 
-                <div class="form-control">
-                    <div class="row">
-                        <input type="text" class="form-control" placeholder="Nome de usuário" autofocus asp-for="Username" />
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" asp-for="Password" />
+<body class="text-center">
+    <div class="container">
+        <div class="jumbotron">
+            <form class="form-control" asp-controller="Login" asp-action="Login" asp-antiforgery="true">
+                <div class="form-group">
+                    <div clas="row">
+                        <input type="text" class="form-control" placeholder="Nome de usuário" autofocus asp-for="Usuario" />
+                        <span asp-validation-for="Usuario" class="text-danger"></span>
+                    </div>
+                    <div clas="row">
+                        <input type="password" class="form-control" placeholder="Senha" asp-for="Senha" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="form-control">
-                    <button class="btn btn-lg btn-outline-dark btn-block" type="submit">
-                        Entrar
-                    </button>
-                </div>
-                <div class="card-footer bg-light">
-                    <div asp-validation-summary="All" class="text-danger"></div>
-                </div>
+                <button class="btn btn-info" type="submit">
+                    Entrar
+                </button>
             </form>
         </div>
     </div>
 </body>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
 </html>
+

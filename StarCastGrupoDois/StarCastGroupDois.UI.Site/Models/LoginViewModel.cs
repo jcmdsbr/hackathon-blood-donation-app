@@ -7,11 +7,11 @@ namespace StarCastGroupDois.UI.Site.Models
     public class LoginViewModel
     {
         [Required(ErrorMessage = MensagensGerais.CAMPO_OBRIGATORIO)]
-        [DisplayName("Nome")]
-        public string Username { get; set; }
+        [DisplayName("Usuário")]
+        public string Usuario { get; set; }
 
         [Required(ErrorMessage = MensagensGerais.CAMPO_OBRIGATORIO)]
-        [DisplayName("Nome")]
-        public string Password { get; set; }
+        [DisplayName("Senha")]
+        public string Senha { get; set; }
     }
 }

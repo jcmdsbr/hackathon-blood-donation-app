@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StarCastGroupDois.UI.Site.Models;
 using StarCastGrupoDois.Application.Domain.Queries;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IDoacaoQuery _doacaoQuery;
 
@@ -17,9 +16,22 @@ namespace StarCastGroupDois.UI.Site.Controllers
 
         public IActionResult Index()
         {
-            var doacaoVM = _doacaoQuery.List().Select(x => (DoacaoViewModel)x);
 
-            return View(doacaoVM.Any() ? doacaoVM : new List<DoacaoViewModel>());
+            return View(_doacaoQuery.List().Select(x => (DoacaoViewModel)x));
+        }
+
+        public IActionResult EnviarAviso()
+        {
+            // Todo Implementar...
+
+            return NotificarSucesso("Aviso enviado com sucesso.", () => RedirectToAction(nameof(Index)));
+        }
+
+        public IActionResult EnviarEmergencia()
+        {
+            // Todo Implementar...
+
+            return NotificarSucesso("Pedido de emergencia enviado com sucesso.", () => RedirectToAction(nameof(Index)));
         }
     }
 }

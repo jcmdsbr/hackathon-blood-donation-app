@@ -5,7 +5,7 @@ using StarCastGrupoDois.Infra.CrossCutting.Messages;
 
 namespace StarCastGroupDois.UI.Site.Controllers
 {
-    public class ParceiroController : Controller
+    public class ParceiroController : BaseController
     {
         private readonly IParceiroService _parceiroService;
 
@@ -24,9 +24,10 @@ namespace StarCastGroupDois.UI.Site.Controllers
         {
             _parceiroService.Salvar(request);
 
-            TempData["Success"] = string.Format(MensagensGerais.CADASTRADO_COM_SUCESSO, "Parceiro");
+            var mensagemSucesso = string.Format(MensagensGerais.CADASTRADO_COM_SUCESSO, "Parceiro");
 
-            return RedirectToAction("Index", "Home");
+            return NotificarSucesso(mensagemSucesso, () => RedirectToAction("Index", "Home"));
+
         }
     }
 }

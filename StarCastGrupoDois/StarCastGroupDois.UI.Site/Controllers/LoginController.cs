@@ -34,7 +34,8 @@ namespace StarCastGroupDois.UI.Site.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
+
+            var result = await _signInManager.PasswordSignInAsync(model.Usuario, model.Senha, false, false);
 
             if (result.Succeeded)
                 return RedirectToAction("Index", "Home");
