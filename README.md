@@ -8,21 +8,20 @@ A proposta desse documento é atingir o maior número de pessoas para realizarem
 
 ## Tecnologias Implementadas
 
-ASP.NET Core 2.1 (with .NET Core)
-ASP.NET MVC Core
-Entity Framework Core 2.1
-.NET Core Native DI
+- ASP.NET Core 2.1 (with .NET Core)
+- ASP.NET MVC Core
+- Entity Framework Core 2.1
+- .NET Core Native DI
 
 ## Arquitetura 
 
-Domain Driven Design (Layers and Domain Model Pattern)
-Unit of Work
-Repository Pattern
+- Domain Driven Design (Layers and Domain Model Pattern)
+- Unit of Work
+- Repository Pattern
 
 
 # Pré Requisitos:
 
 - Ter instalado a sdk do asp.net core 2.1 rlc. 
-- -> Link para donwload: https://github.com/dotnet/versions/tree/7a833dddfddc27f2074b755b94234a25b9757637/build-info/dotnet/product/cli/release/2.1
 - Ter vscode ou visual studio 2017 para rodar o projeto. 
-- -> Link para donwload: https://visualstudio.microsoft.com/
+
