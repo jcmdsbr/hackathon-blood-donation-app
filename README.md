@@ -14,7 +14,7 @@ Se esse projeto te ajudou em alguma coisa, taquele pau na estrelinha \o/
 
 - Visual Studio 2019, Visual Studio Code or Rider
 - .Net Core 2.X +
--
+
 ## Tecnologias Implementadas 🚧
 
 - ASP.NET Core 2.1 (with .NET Core)
